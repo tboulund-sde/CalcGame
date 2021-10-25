@@ -4,9 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyCode;
 
-import java.awt.event.KeyEvent;
 import java.util.Random;
 
 public class GameController {
@@ -27,7 +25,7 @@ public class GameController {
     private Label lblGameOver;
 
     @FXML
-    private TextField txtResult;
+    private TextField txtGuess;
 
     @FXML
     private Button btnGuess;
@@ -45,7 +43,7 @@ public class GameController {
     private void guess() {
         double number1 = Double.parseDouble(lblNumber1.getText());
         double number2 = Double.parseDouble(lblNumber2.getText());
-        double guess = Double.parseDouble(txtResult.getText());
+        double guess = Double.parseDouble(txtGuess.getText());
         double result = 0;
         switch (lblOperator.getText()) {
             case "+":
@@ -70,7 +68,7 @@ public class GameController {
         lblOperator.setText(operators[random.nextInt(operators.length)]);
         lblNumber1.setText(String.valueOf(random.nextInt(10 * (score+1))+1));
         lblNumber2.setText(String.valueOf(random.nextInt(10 * (score+1))+1));
-        txtResult.setText("");
+        txtGuess.setText("");
     }
 
     private void increaseScore()
@@ -83,7 +81,7 @@ public class GameController {
     private void gameOver()
     {
         btnGuess.setDisable(true);
-        txtResult.setDisable(true);
+        txtGuess.setDisable(true);
         lblGameOver.setVisible(true);
     }
 }
