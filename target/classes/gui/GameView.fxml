@@ -34,7 +34,7 @@
          </Label>
       </children>
    </HBox>
-   <TextField fx:id="txtResult" alignment="CENTER" onAction="#guess">
+   <TextField fx:id="txtGuess" alignment="CENTER" onAction="#guess">
       <font>
          <Font name="Tahoma Bold" size="25.0" />
       </font>
