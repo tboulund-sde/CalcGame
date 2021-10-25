@@ -11,7 +11,7 @@ import java.util.Random;
 
 public class GameController {
 
-    private String[] operators = new String[]{"+", "-", "*"};
+    private String[] operators = new String[]{"+", "-"};
     private Random random = new Random();
 
     @FXML
@@ -53,12 +53,6 @@ public class GameController {
                 break;
             case "-":
                 result = number1 - number2;
-                break;
-            case "*":
-                result = number1 * number2;
-                break;
-            case "/":
-                result = number1 / number2;
                 break;
         }
 
